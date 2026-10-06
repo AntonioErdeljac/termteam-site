@@ -1183,5 +1183,15 @@
   "file": "759bd2faa3b71760b77cdaa0a4fe6209",
   "status": 200,
   "type": "image/svg+xml"
+ },
+ "https://framerusercontent.com/images/gQonPOLo1DN64s4i2JQXDssLkt8.jpg?scale-down-to=4096&width=6000&height=4000": {
+  "file": "87161dfc51af522d2813f9593594b9d5",
+  "status": 200,
+  "type": "image/jpeg"
+ },
+ "https://framerusercontent.com/images/gQonPOLo1DN64s4i2JQXDssLkt8.jpg?width=6000&height=4000": {
+  "file": "778b7e0e30b5de63b286e0b4ad7a0f33",
+  "status": 200,
+  "type": "image/jpeg"
  }
 }
