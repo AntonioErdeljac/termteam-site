@@ -12,7 +12,7 @@
   <meta property="og:title" content="{{ pageTitle }}">
   <meta property="og:description" content="{{ description or site.description }}">
   <meta property="og:url" content="{{ site.url }}{{ page.url }}">
-  <meta property="og:image" content="{{ site.og_image | img(1200) }}">
+  <meta property="og:image" content="{{ site.og_image | img(1200) if "://" in site.og_image else site.url ~ site.og_image }}">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="google-site-verification" content="{{ site.google_site_verification }}">
   <link rel="icon" href="{{ site.favicon | img(64) }}">
