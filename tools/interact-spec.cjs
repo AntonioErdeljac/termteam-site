@@ -76,10 +76,8 @@ function clickGroups(records, baseAttr, baseAnims) {
   const groups = {};
   records.forEach((r, i) => (groups[find(i)] ||= []).push(i));
   const out = [];
-  // a style slot touched by several groups belongs to none of them
-  const styleGroups = {}; for (const [g, idxs] of Object.entries(groups)) for (const i of idxs) for (const k of touched[i]) if (k.endsWith("|style")) (styleGroups[k] ||= new Set()).add(g);
-  for (const [g, idxs] of Object.entries(groups)) {
-    const slots = [...new Set(idxs.flatMap((i) => [...touched[i]]))].filter((k) => !styleGroups[k] || styleGroups[k].size === 1);
+  for (const idxs of Object.values(groups)) {
+    const slots = [...new Set(idxs.flatMap((i) => [...touched[i]]))];
     const attrSlots = slots.filter((k) => !k.startsWith("node:")).map((k) => k.split("|"));
     const nodeIds = slots.filter((k) => k.startsWith("node:")).map((k) => k.slice(5));
     const nodes = {};
@@ -97,7 +95,9 @@ function clickGroups(records, baseAttr, baseAnims) {
       const s0 = snap(); apply(r.t0, r.t1); const s1 = snap(); addT(s0, s1, ph(r.t0, r.t1, r.a1));
       if (!r.explore) { apply(r.t1, Infinity); const s2 = snap(); addT(s1, s2, ph(r.t1, Infinity, r.a2)); }
     }
-    out.push({ attrs: attrSlots, nodeIds, nodes, states: states.map((s) => [s.v, s.n]), triggers });
+    // a style that ends the same in every state is animation residue (or another group's): leave it alone
+    const keep = attrSlots.map(([, a], i) => a !== "style" || new Set(states.map((s) => s.v[i])).size > 1);
+    out.push({ attrs: attrSlots.filter((_, i) => keep[i]), nodeIds, nodes, states: states.map((s) => [s.v.filter((_, i) => keep[i]), s.n]), triggers });
   }
   return out;
 }
