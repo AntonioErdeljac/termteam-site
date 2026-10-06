@@ -1,0 +1,23 @@
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-about">
+      <img src="{{ site.logo_color | img(400) }}" alt="{{ site.name }}" width="124" height="40" loading="lazy">
+      <p>{{ site.tagline }}</p>
+    </div>
+    <a class="footer-thumbs" href="/gallery/" aria-label="Galerija">
+      {%- for src in site.footer_images %}<img src="{{ src | img(200) }}" alt="" loading="lazy">{% endfor -%}
+    </a>
+    <div class="footer-contact">
+      <h4>{{ site.city }}</h4>
+      <p>{{ site.address }}</p>
+      <p><a href="{{ site.phone | tel }}">{{ site.phone }}</a></p>
+      <p><a href="mailto:{{ site.email }}">{{ site.email }}</a></p>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <span>© {% year %} - {{ site.name }}</span>
+    <nav aria-label="Podnožje">
+      <a href="/">Početna</a><a href="/about-us/">O nama</a><a href="/contact/">Kontakt</a>
+    </nav>
+  </div>
+</footer>

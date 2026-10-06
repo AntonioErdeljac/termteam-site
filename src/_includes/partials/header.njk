@@ -1,0 +1,25 @@
+{%- from "partials/icons.njk" import icon -%}
+{%- set nav = [
+  { url: "/", label: "Početna" },
+  { url: "/about-us/", label: "O nama" },
+  { url: "/services/", label: "Usluge" },
+  { url: "/gallery/", label: "Galerija" }
+] -%}
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="/" aria-label="{{ site.name }} – početna">
+      <img src="{{ site.logo_light }}" alt="{{ site.name }}" width="133" height="26">
+    </a>
+    <nav class="nav" id="nav" aria-label="Glavna navigacija">
+      {%- for item in nav %}
+      <a href="{{ item.url }}"{% if page.url == item.url or (item.url != "/" and page.url.startsWith(item.url)) %} aria-current="page"{% endif %}>{{ item.label }}</a>
+      {%- endfor %}
+      <a class="nav-contact" href="/contact/">Kontakt</a>
+    </nav>
+    <div class="header-actions">
+      <a class="header-phone" href="{{ site.phone | tel }}">{{ icon("phone", 16) }}<span>{{ site.phone }}</span></a>
+      <a class="btn btn-yellow" href="/contact/">Kontakt</a>
+      <button class="nav-toggle" type="button" aria-controls="nav" aria-expanded="false" aria-label="Izbornik">{{ icon("menu", 26) }}</button>
+    </div>
+  </div>
+</header>

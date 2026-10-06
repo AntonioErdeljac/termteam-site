@@ -1,0 +1,19 @@
+---
+layout: base.njk
+useSiteTitle: true
+permalink: /gallery/
+---
+{% set heroTitle = gallery.title %}{% set heroText = gallery.text %}{% set heroImage = "" %}
+{% include "page-hero.njk" %}
+<section class="section">
+  <div class="container">
+    <div class="gallery-grid">
+      {%- for g in gallery.images %}
+      <a class="gallery-item" href="{{ g.src | img(2000) }}" data-lightbox>
+        <img src="{{ g.src | img(900) }}" alt="{{ g.alt }}" loading="lazy">
+      </a>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+<dialog class="lightbox" aria-label="Fotografija"><button class="lightbox-close" aria-label="Zatvori">×</button><img alt=""></dialog>

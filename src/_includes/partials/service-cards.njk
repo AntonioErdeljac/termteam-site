@@ -1,0 +1,10 @@
+{%- from "partials/icons.njk" import icon -%}
+<div class="service-cards">
+  {%- for s in collections.services | byOrder %}
+  <a class="service-card" href="{{ s.url }}">
+    {{ icon(s.data.icon, 34) }}
+    <h3>{{ s.data.title }}</h3>
+    <p>{{ s.data.summary }}</p>
+  </a>
+  {%- endfor %}
+</div>

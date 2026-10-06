@@ -1,0 +1,18 @@
+{
+  "title": "O nama",
+  "text": "Naš uspjeh gradimo kroz stalni napredak, širenje usluga i predanost potpunom zadovoljstvu klijenata.",
+  "hero_image": "https://framerusercontent.com/images/hsXXOnw0HYKcVEv9lqkRyjqZ4.jpeg",
+  "since_image": "https://framerusercontent.com/images/tvGjZs2BCKuFzn2LRgRRlokGIr4.jpeg",
+  "since_label": "Od",
+  "since_year": "2022",
+  "why_title": "Zašto odabrati Term Team?",
+  "why_text": "**Term Team je obiteljski obrt osnovan 2022. godine.** Nastao je na temelju više od 30 godina iskustva u grijanju, hlađenju i vodoinstalacijama. Danas spaja dugogodišnju praksu s novim znanjima i edukacijama iz područja dizalica topline, podnog grijanja i fan coilera pružajući praktična i pouzdana rješenja za domove i poslovne prostore.",
+  "points": ["30+ godina iskustva", "Brza i uredna ugradnja", "Rješenja za domove i poslovne prostore", "Specijalisti za podno grijanje i dizalice topline"],
+  "edu_title": "Ulažemo u kontinuiranu edukaciju",
+  "edu_text": "Posvećeni smo održavanju najviših standarda kvalitete u svemu što radimo. Od materijala koje koristimo do tehnika koje primjenjujemo – izvrsnost je naš kriterij.",
+  "cards": [
+    { "image": "https://framerusercontent.com/images/ektF02FW5mjmhCgFN8D7dPPz2RM.jpg", "title": "Ovlašteni serviseri", "text": "Ovlašteni smo serviseri za Bergen dizalice topline. Nudimo stručnu montažu, održavanje i brzu intervenciju uz originalne dijelove." },
+    { "image": "https://framerusercontent.com/images/fSHG3v5Z1iMQq7dNnQv20NavK8.jpg", "title": "Redovite radionice", "text": "Pohađamo redovite radionice i seminare koji prate najnovije trendove i napredak u instalaterskoj tehnologiji." },
+    { "image": "https://framerusercontent.com/images/bOqcQ57hpeF3juP8sOKj2IRopVQ.jpg", "title": "Pouzdani partneri", "text": "S našim partnerima rješavamo sve, od električnih radova do specijalnih poslova poput dijamantnog bušenja. Sve na jednom mjestu." }
+  ]
+}

@@ -1,0 +1,8 @@
+{# usage: set heroTitle, heroText, heroImage before include #}
+<section class="page-hero{% if heroImage %} has-image{% endif %}">
+  {% if heroImage %}<img class="page-hero-bg" src="{{ heroImage | img(2000) }}" alt="" fetchpriority="high">{% endif %}
+  <div class="container page-hero-inner">
+    <h1>{{ heroTitle }}</h1>
+    {% if heroText %}<p>{{ heroText }}</p>{% endif %}
+  </div>
+</section>

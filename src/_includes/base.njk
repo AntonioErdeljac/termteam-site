@@ -1,0 +1,31 @@
+{%- from "partials/icons.njk" import icon -%}
+<!doctype html>
+<html lang="hr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {%- set pageTitle = (title ~ " - " ~ site.name) if (title and not useSiteTitle) else site.title %}
+  <title>{{ pageTitle }}</title>
+  <meta name="description" content="{{ description or site.description }}">
+  <link rel="canonical" href="{{ site.url }}{{ page.url | replace('/index.html','/') }}">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="{{ pageTitle }}">
+  <meta property="og:description" content="{{ description or site.description }}">
+  <meta property="og:url" content="{{ site.url }}{{ page.url }}">
+  <meta property="og:image" content="{{ site.og_image | img(1200) }}">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="google-site-verification" content="{{ site.google_site_verification }}">
+  <link rel="icon" href="{{ site.favicon | img(64) }}">
+  <link rel="preload" href="/assets/fonts/figtree-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <script src="/assets/js/main.js" defer></script>
+</head>
+<body class="{{ bodyClass }}">
+  {% include "partials/header.njk" %}
+  <main>
+    {{ content | safe }}
+  </main>
+  {% include "partials/cta.njk" %}
+  {% include "partials/footer.njk" %}
+</body>
+</html>

@@ -1,0 +1,104 @@
+---
+layout: base.njk
+useSiteTitle: true
+bodyClass: home
+---
+{%- from "partials/icons.njk" import icon, stars -%}
+{%- set h = home.hero -%}
+<section class="hero band-blue">
+  <div class="container hero-grid">
+    <div class="hero-copy">
+      <h1>{{ h.title }}</h1>
+      <p>{{ h.text }}</p>
+      <div class="hero-actions">
+        <a class="btn btn-yellow btn-lg" href="/services/">{{ h.button }}</a>
+        <div class="hero-rating">{{ stars(5) }}<strong>{{ h.rating_text }}</strong></div>
+      </div>
+    </div>
+    <img class="hero-img" src="{{ h.image | img(1200) }}" alt="{{ h.image_alt }}" width="600" height="600" fetchpriority="high">
+  </div>
+</section>
+
+<section class="steps band-light">
+  <div class="container steps-grid">
+    {%- for s in home.steps %}
+    <div class="step">
+      <div class="step-icon">{{ icon(s.icon, 44) }}</div>
+      <h3>{{ s.title }}</h3>
+      <p>{{ s.text }}</p>
+    </div>
+    {%- if not loop.last %}<div class="step-arrow" aria-hidden="true"><svg viewBox="0 0 60 24" width="60" height="24"><path d="M2 12h52m-10-8 10 8-10 8" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div>{% endif %}
+    {%- endfor %}
+  </div>
+</section>
+
+<section class="section">
+  <div class="container split">
+    <a class="photo-card" href="/about-us/">
+      <img src="{{ home.intro.image | img(1000) }}" alt="" loading="lazy">
+      <span>{{ home.intro.image_label }}</span>
+    </a>
+    <div>
+      <h2 class="h2">{{ home.intro.title }}</h2>
+      <p class="lead">{{ home.intro.text }}</p>
+      <ul class="checklist">
+        {%- for p in home.intro.points %}<li>{{ icon("check", 20) }}<span>{{ p }}</span></li>{% endfor %}
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="section band-blue services-band">
+  <div class="container">
+    <div class="section-head">
+      <h2 class="h2">{{ home.services_title }}</h2>
+      <p>{{ home.services_text }}</p>
+    </div>
+    {% include "partials/service-cards.njk" %}
+    <div class="help">
+      <h3>{{ home.help_title }}</h3>
+      <a class="btn btn-yellow" href="/contact/">Kontakt</a>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container faq-grid">
+    <div>
+      <h2 class="h2">{{ home.faq_title }}</h2>
+      <p class="lead">{{ home.faq_text }}</p>
+      <a class="btn btn-yellow" href="/contact/">Kontakt</a>
+    </div>
+    <div class="faq">
+      {%- for f in home.faq %}
+      <details{% if loop.first %} open{% endif %}>
+        <summary><span>{{ f.q }}</span>{{ icon("arrow", 18) }}</summary>
+        <p>{{ f.a }}</p>
+      </details>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section band-light testimonials">
+  <div class="container section-head dark">
+    <h2 class="h2">{{ home.testimonials_title }}</h2>
+    <p>{{ home.testimonials_text }}</p>
+  </div>
+  <div class="marquee">
+    <div class="marquee-track">
+      {%- for round in [1, 2] %}
+      {%- for t in home.testimonials %}
+      <figure class="review"{% if round == 2 %} aria-hidden="true"{% endif %}>
+        {{ stars(t.stars) }}
+        <blockquote>{{ t.text }}</blockquote>
+        <figcaption>
+          {% if t.photo %}<img src="{{ t.photo | img(120) }}" alt="" loading="lazy">{% else %}<span class="avatar" aria-hidden="true"></span>{% endif %}
+          <strong>{{ t.name }}</strong>
+        </figcaption>
+      </figure>
+      {%- endfor %}
+      {%- endfor %}
+    </div>
+  </div>
+</section>
