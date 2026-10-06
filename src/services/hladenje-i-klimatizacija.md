@@ -3,7 +3,7 @@ title: Hlađenje i klimatizacija
 order: 5
 icon: snowflake
 summary: Stručna ugradnja, servis i održavanje klima uređaja.
-image: https://framerusercontent.com/images/rw6QVwtgyfSPG8QrL70KK2Kj0.jpg
+image: /images/rw6QVwtgyfSPG8QrL70KK2Kj0.jpg
 heading: Komfor na dohvat ruke
 ---
 U vrućim ljetnim danima ništa nije važnije od pouzdane klimatizacije. Naša rješenja osiguravaju svjež i ugodan prostor, bez obzira radi li se o stanu, kući ili poslovnom objektu. Kvalitetni klima uređaji uz pravilnu montažu pružaju optimalnu temperaturu, tih rad i nisku potrošnju energije.

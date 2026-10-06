@@ -3,7 +3,7 @@ title: Grijanje i toplinska rješenja
 order: 3
 icon: flame
 summary: Projektiranje i ugradnja kotlovnica za pouzdano grijanje većih prostora.
-image: https://framerusercontent.com/images/9ZJTRHPylTIzNiSAKfHpvN29lQ.jpg
+image: /images/9ZJTRHPylTIzNiSAKfHpvN29lQ.jpg
 heading: Grijanje po mjeri vašeg doma
 ---
 Udoban dom počinje s kvalitetnim sustavom grijanja. Moderna rješenja danas spajaju uštedu, ekološku održivost i dugoročnu pouzdanost. Bilo da se radi o dizalici topline, podnom grijanju ili akumulacijskim spremnicima, cilj je uvijek isti – toplina i udobnost u svakom kutku vašeg doma.

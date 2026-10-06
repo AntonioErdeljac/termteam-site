@@ -2,12 +2,12 @@
   "title": "Galerija",
   "text": "Pogledajte primjere naših instalacija grijanja, klimatizacije i vodoinstalacija te uvjerite se u kvalitetu Term Teama.",
   "images": [
-    { "src": "https://framerusercontent.com/images/iKd4QEFGVVZ3WBghOXAMMmVehs.jpeg", "alt": "Podno grijanje" },
-    { "src": "https://framerusercontent.com/images/AxmGfzyoNh2ZknSUZRV6Uf32Rk4.jpeg", "alt": "Kotlovnica" },
-    { "src": "https://framerusercontent.com/images/ShS6zhPe3ytvgxWwfVdZ1LjBWCo.jpeg", "alt": "" },
-    { "src": "https://framerusercontent.com/images/Wh56IULELx5WubWAGbAe7yyCU.jpeg", "alt": "" },
-    { "src": "https://framerusercontent.com/images/lL1eAnY74GY7WOaWU7PdEn9rQbY.jpeg", "alt": "" },
-    { "src": "https://framerusercontent.com/images/13kOygGGMCX72ccSd1hNubptrQM.jpeg", "alt": "" },
-    { "src": "https://framerusercontent.com/images/370ezEYlnRZ7dk6FjsLytAuW4w.jpeg", "alt": "" }
+    { "src": "/images/iKd4QEFGVVZ3WBghOXAMMmVehs.jpg", "alt": "Podno grijanje" },
+    { "src": "/images/AxmGfzyoNh2ZknSUZRV6Uf32Rk4.jpg", "alt": "Kotlovnica" },
+    { "src": "/images/ShS6zhPe3ytvgxWwfVdZ1LjBWCo.jpg", "alt": "" },
+    { "src": "/images/Wh56IULELx5WubWAGbAe7yyCU.jpg", "alt": "" },
+    { "src": "/images/lL1eAnY74GY7WOaWU7PdEn9rQbY.jpg", "alt": "" },
+    { "src": "/images/13kOygGGMCX72ccSd1hNubptrQM.jpg", "alt": "" },
+    { "src": "/images/370ezEYlnRZ7dk6FjsLytAuW4w.jpg", "alt": "" }
   ]
 }

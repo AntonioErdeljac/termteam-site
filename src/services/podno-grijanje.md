@@ -3,7 +3,7 @@ title: Podno grijanje
 order: 1
 icon: thermometer
 summary: Ugradnja, održavanje i popravak sustava podnog grijanja za maksimalnu udobnost doma.
-image: https://framerusercontent.com/images/A7mCd5ZO0dER2VEb6ESXaUCmnU.jpeg
+image: /images/A7mCd5ZO0dER2VEb6ESXaUCmnU.jpg
 heading: Udobnost i elegancija bez radijatora
 ---
 Zamislite dom u kojem je pod uvijek topao pod prstima, zrak čist bez prašine, a zidovi bez vidljivih radijatora – upravo to donosi podno grijanje. Umjesto da se toplina stvara iz jednog mjesta, kao kod radijatora, podna površina postaje veliki radijator koji od poda prema gore ravnomjerno grije cijeli prostor, stvarajući osjećaj ugode i intimne topline.

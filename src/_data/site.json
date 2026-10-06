@@ -3,10 +3,10 @@
   "url": "https://termteam.hr",
   "title": "Term Team — Usluge grijanja i klimatizacije u Rijeci",
   "description": "Term Team pruža stručne usluge instalacije i održavanja grijanja, klimatizacije i dizalica topline u Rijeci i okolici. Pouzdan partner za vaš dom i poslovni prostor.",
-  "og_image": "https://framerusercontent.com/images/3uRg908J9wfM93xFjRy6If1NxZQ.png",
-  "favicon": "https://framerusercontent.com/images/htRn2H4QPRwIHMxl0cf3t2cn8.png",
-  "logo_light": "https://framerusercontent.com/images/9SvHcgOtipMi0Ezl6g4I3VvmUJo.svg",
-  "logo_color": "https://framerusercontent.com/images/oyQ2BWdtt5FS61ADGA51ivsJfyU.png",
+  "og_image": "/images/3uRg908J9wfM93xFjRy6If1NxZQ.png",
+  "favicon": "/images/htRn2H4QPRwIHMxl0cf3t2cn8.png",
+  "logo_light": "/images/9SvHcgOtipMi0Ezl6g4I3VvmUJo.svg",
+  "logo_color": "/images/oyQ2BWdtt5FS61ADGA51ivsJfyU.png",
   "phone": "+385 91 585 9565",
   "email": "info@termteam.hr",
   "city": "Matulji",
@@ -15,12 +15,12 @@
   "google_site_verification": "PD01r-OY2YEKGaGj1n1b0wAmtbivWufoR2zrSF7KUQo",
   "cta_title": "Tražite tim kojem možete vjerovati?",
   "footer_images": [
-    "https://framerusercontent.com/images/Z1PmxaaJXRAyeZ14Y6eb71xbyX4.jpeg",
-    "https://framerusercontent.com/images/CcJpMxvfRmWuOMGBfBg4tnWLDc.jpeg",
-    "https://framerusercontent.com/images/370ezEYlnRZ7dk6FjsLytAuW4w.jpeg",
-    "https://framerusercontent.com/images/AxmGfzyoNh2ZknSUZRV6Uf32Rk4.jpeg",
-    "https://framerusercontent.com/images/OBsrZO8NcRN49UcWiRnM7AJtZU.jpeg",
-    "https://framerusercontent.com/images/Q0RjUe4NVuxVHW4z9ReKdy1mE.jpeg"
+    "/images/Z1PmxaaJXRAyeZ14Y6eb71xbyX4.jpg",
+    "/images/CcJpMxvfRmWuOMGBfBg4tnWLDc.jpg",
+    "/images/370ezEYlnRZ7dk6FjsLytAuW4w.jpg",
+    "/images/AxmGfzyoNh2ZknSUZRV6Uf32Rk4.jpg",
+    "/images/OBsrZO8NcRN49UcWiRnM7AJtZU.jpg",
+    "/images/Q0RjUe4NVuxVHW4z9ReKdy1mE.jpg"
   ],
   "form": {
     "web3forms_access_key": "",

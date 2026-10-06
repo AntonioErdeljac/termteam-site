@@ -4,7 +4,7 @@
     "text": "TermTeam je vaš pouzdani partner za sve sustave grijanja, hlađenja i vodoinstalacija – od ugradnje do održavanja.",
     "button": "Pogledajte naše usluge",
     "rating_text": "100+ zadovoljnih klijenata",
-    "image": "https://framerusercontent.com/images/bXY8mu8Zfu8KVguegcdqo56KlY.jpg",
+    "image": "/images/bXY8mu8Zfu8KVguegcdqo56KlY.jpg",
     "image_alt": "Term Team majstor ispred kombija"
   },
   "steps": [
@@ -13,7 +13,7 @@
     { "icon": "truck", "title": "Stižemo bez odgode", "text": "Prilagođavamo se vašem rasporedu i stižemo spremni." }
   ],
   "intro": {
-    "image": "https://framerusercontent.com/images/YspzzrWMPeEI1vSgi3HBUH2PdsA.jpeg",
+    "image": "/images/YspzzrWMPeEI1vSgi3HBUH2PdsA.jpg",
     "image_label": "Upoznajte Term Team",
     "title": "Obiteljski obrt kojem možete vjerovati.",
     "text": "Brinemo da svaki sustav u vašem domu radi sigurno, učinkovito i dugoročno pouzdano.",
@@ -37,7 +37,7 @@
   "testimonials": [
     { "name": "Noemi D.", "stars": 5, "photo": "", "text": "Term Team mi je radio podno grijanje u stanu. Od prvog kontakta do završetka radova sve je išlo glatko, bez stresa i komplikacija. Cijena je bila fer, a rokovi ispoštovani👌🏻" },
     { "name": "Korina S.", "stars": 4, "photo": "", "text": "Dizalica topline radi odlicno, a racuni su manji. Montaza je bila ok, samo su morali doci dva puta zbog dodatnih dijelova" },
-    { "name": "R.M.", "stars": 5, "photo": "https://framerusercontent.com/images/jEEZrscIKDint6P5ERSK62j8JI.jpg", "text": "Trebali smo brzo rjesenje jer nam stara pumpa vise nije radila. Dosli su u roku dva dana, ugradili novu i objasnili sve detalje koristenja. Od tada grijanje radi super" },
+    { "name": "R.M.", "stars": 5, "photo": "/images/jEEZrscIKDint6P5ERSK62j8JI.jpg", "text": "Trebali smo brzo rjesenje jer nam stara pumpa vise nije radila. Dosli su u roku dva dana, ugradili novu i objasnili sve detalje koristenja. Od tada grijanje radi super" },
     { "name": "Ivan K.", "stars": 5, "photo": "", "text": "Jako sam zadovoljan s ugradnjom klima uređaja. Dečki su radili uredno i brzo, sve objasnili i odmah pustili u pogon" }
   ]
 }
