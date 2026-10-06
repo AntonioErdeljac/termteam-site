@@ -1,0 +1,8 @@
+/*
+ * TrendUp (phosphor-icons/TrendUp@0.0.57)
+ *
+ * Learn More: https://www.framer.com/asset-urls
+ */
+
+export * from "https://framerusercontent.com/modules/FBRHYzwDWVWmWbk46pw8/KdhGahA86tqDuyNDElLZ/TrendUp.js"
+export { default } from "https://framerusercontent.com/modules/FBRHYzwDWVWmWbk46pw8/KdhGahA86tqDuyNDElLZ/TrendUp.js"

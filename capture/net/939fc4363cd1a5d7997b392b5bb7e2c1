@@ -1,0 +1,8 @@
+/*
+ * Thermometer (phosphor-icons/Thermometer@0.0.57)
+ *
+ * Learn More: https://www.framer.com/asset-urls
+ */
+
+export * from "https://framerusercontent.com/modules/9a3QL0Qn621D4doGReXg/NeJZZEVv6sUR6tzd6qqv/Thermometer.js"
+export { default } from "https://framerusercontent.com/modules/9a3QL0Qn621D4doGReXg/NeJZZEVv6sUR6tzd6qqv/Thermometer.js"

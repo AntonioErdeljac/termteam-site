@@ -1,0 +1,8 @@
+/*
+ * Pipe (phosphor-icons/Pipe@0.0.57)
+ *
+ * Learn More: https://www.framer.com/asset-urls
+ */
+
+export * from "https://framerusercontent.com/modules/TxDfYi6EuFGaiB9fgZ1w/zVQEBB9lXp5cZyg7KwBw/Pipe.js"
+export { default } from "https://framerusercontent.com/modules/TxDfYi6EuFGaiB9fgZ1w/zVQEBB9lXp5cZyg7KwBw/Pipe.js"

@@ -1,0 +1,8 @@
+/*
+ * Star (material-icons/Star@0.0.32)
+ *
+ * Learn More: https://www.framer.com/asset-urls
+ */
+
+export * from "https://framerusercontent.com/modules/Y0kWlJ2DzYItQFSs9eR5/hfXxRU5sDxktgTahJtto/Star.js"
+export { default } from "https://framerusercontent.com/modules/Y0kWlJ2DzYItQFSs9eR5/hfXxRU5sDxktgTahJtto/Star.js"

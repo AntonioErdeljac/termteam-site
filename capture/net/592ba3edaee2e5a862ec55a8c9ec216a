@@ -1,0 +1,8 @@
+/*
+ * Fan (phosphor-icons/Fan@0.0.57)
+ *
+ * Learn More: https://www.framer.com/asset-urls
+ */
+
+export * from "https://framerusercontent.com/modules/LxVHOtwBNSqxpYS5Eq4a/sSMIsmZEVRDaQLgQriL6/Fan.js"
+export { default } from "https://framerusercontent.com/modules/LxVHOtwBNSqxpYS5Eq4a/sSMIsmZEVRDaQLgQriL6/Fan.js"

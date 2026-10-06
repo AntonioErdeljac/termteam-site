@@ -1,0 +1,8 @@
+/*
+ * StarOutline (material-icons/StarOutline@0.0.32)
+ *
+ * Learn More: https://www.framer.com/asset-urls
+ */
+
+export * from "https://framerusercontent.com/modules/Aza9mvBd5al3aT2wlzSU/nMXc53q3jgNbkDRaTNNm/StarOutline.js"
+export { default } from "https://framerusercontent.com/modules/Aza9mvBd5al3aT2wlzSU/nMXc53q3jgNbkDRaTNNm/StarOutline.js"
