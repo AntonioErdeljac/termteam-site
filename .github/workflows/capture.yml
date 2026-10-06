@@ -1,8 +1,5 @@
 name: Capture live site
 on:
-  push:
-    branches: [capture]
-    paths: [capture-tools/**, .github/workflows/capture.yml]
   workflow_dispatch:
     inputs:
       script: { description: "capture script", default: "capture2.mjs" }
