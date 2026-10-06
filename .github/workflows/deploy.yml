@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: read
   pages: write
   id-token: write
 
@@ -22,26 +22,13 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 22
-          cache: npm
-      - run: npm ci
-
-      # One-time migration: copy any images still hosted by Framer into src/images and commit them.
-      - name: Import images from Framer
-        run: |
-          if grep -rqE 'framerusercontent\.com/images/' src; then
-            npm run fetch-images
-            git config user.name "github-actions[bot]"
-            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-            git add src
-            git commit -m "Import images from Framer"
-            git push
-          fi
-
       - id: pages
         uses: actions/configure-pages@v5
-      - run: npm run build
-        env:
-          PATH_PREFIX: ${{ steps.pages.outputs.base_path }}
+      # The site is plain static files. On the github.io preview it lives under /termteam-site,
+      # so root links get that prefix; on the custom domain the prefix is empty and nothing changes.
+      - run: |
+          cp -r site _site
+          node tools/prefix.cjs _site "${{ steps.pages.outputs.base_path }}"
       - uses: actions/upload-pages-artifact@v3
         with:
           path: _site
