@@ -248,9 +248,17 @@
   }
   (spec.interactions || []).forEach(function (s) {
     var el = find(s.on); if (!el) return;
-    var rin = new Runner(), rout = new Runner(), on = false;
-    function enter() { if (on) return; on = true; rout.stop(); rin.run(s["in"], rout); }
-    function leave() { if (!on) return; on = false; rin.stop(); rout.run(s.out, rin); }
+    var rin = new Runner(), rout = new Runner(), on = false, base = el.getAttribute("style");
+    function enter() { if (on || el.__locked) return; on = true; rout.stop(); rin.run(s["in"], rout); }
+    function leave() { if (!on || el.__locked) return; on = false; rin.stop(); rout.run(s.out, rin); }
+    // a submit button whose form left the Default variant has no hover state in Framer: drop it
+    el.__unhover = function () {
+      on = false; rin.stop(); rout.stop();
+      rin.anims.concat(rout.anims).forEach(function (a) { a.cancel(); }); rin.anims = []; rout.anims = [];
+      if (base == null) el.removeAttribute("style"); else el.setAttribute("style", base);
+    };
+    // ...and when an error sends it back to Default, Framer shows it hovered until the next pointer move
+    el.__rehover = function () { el.__locked = false; on = false; setTimeout(enter, 100); };
     if (s.kind === "hover") {
       el.addEventListener("pointerenter", function (e) { if (e.pointerType !== "touch") enter(); });
       el.addEventListener("pointerleave", function (e) { if (e.pointerType !== "touch") leave(); });
@@ -341,6 +349,46 @@
       });
     });
   });
+
+  // ---- contact form ---------------------------------------------------------
+  // Same behaviour as Framer's form: empty-state class on inputs, Loading / Success / Error button
+  // variants. Where it posts is set in /assets/js/form-config.js (falls back to Framer's endpoint).
+  (function () {
+    var form = document.querySelector("form"); if (!form) return;
+    form.querySelectorAll("input.framer-form-input").forEach(function (i) {
+      i.addEventListener("input", function () { i.classList.toggle("framer-form-input-empty", !i.value); });
+    });
+    if (!spec.form) return;
+    // node ids made up for the recorded states (h0, e3...) repeat in every breakpoint: keep them apart
+    spec.form.bps.forEach(function (b, n) {
+      var tag = function (id) { return typeof id === "string" && /^[eh]\d+$/.test(id) ? id + "-" + n : id; };
+      ["pending", "success", "error"].forEach(function (k) {
+        b[k] = b[k].map(function (o) {
+          o = o.slice(); o[2] = tag(o[2]);
+          if (o[0] === "add") { o[3] = tag(o[3]); o[4] = o[4].replace(/data-fx="([eh]\d+)"/g, function (_, id) { return 'data-fx="' + id + "-" + n + '"'; }); }
+          return o;
+        });
+      });
+    });
+    var busy = false, runners = [];
+    function run(key) { runners.forEach(function (r) { r.stop(); }); runners = spec.form.bps.map(function (b) { var r = new Runner(); r.run(b[key], null); return r; }); }
+    form.addEventListener("submit", function (e) {
+      e.preventDefault(); if (busy) return; busy = true;
+      var cfg = window.TERMTEAM_FORM || {}, data = new FormData(form), url = spec.form.action;
+      if (cfg.endpoint && cfg.accessKey) {
+        url = cfg.endpoint; data.append("access_key", cfg.accessKey);
+        if (cfg.subject) data.append("subject", cfg.subject);
+        if (cfg.fromName) data.append("from_name", cfg.fromName);
+        if (data.get("Email")) data.append("replyto", data.get("Email"));
+      }
+      var buttons = [].slice.call(form.querySelectorAll("button[type=submit]"));
+      buttons.forEach(function (b) { b.__locked = true; b.__unhover && b.__unhover(); });
+      afterPaint(function () { run("pending"); });
+      fetch(url, { method: "POST", body: data, headers: { accept: "application/json" } })
+        .then(function (r) { return r.ok ? r.json().catch(function () { return {}; }).then(function (j) { return j.success !== false; }) : false; }, function () { return false; })
+        .then(function (ok) { busy = false; run(ok ? "success" : "error"); if (!ok) buttons.forEach(function (b) { b.__rehover ? b.__rehover() : (b.__locked = false); }); });
+    });
+  })();
 
   window.__motion = { animate: animate, set: set, spring: spring, generator: generator, transform: transform, byId: byId, spec: spec };
 })();
