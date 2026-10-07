@@ -352,7 +352,7 @@
 
   // ---- contact form ---------------------------------------------------------
   // Same behaviour as Framer's form: empty-state class on inputs, Loading / Success / Error button
-  // variants. Where it posts is set in /assets/js/form-config.js (falls back to Framer's endpoint).
+  // variants. Where it posts is set in /assets/js/form-config.js.
   (function () {
     var form = document.querySelector("form"); if (!form) return;
     form.querySelectorAll("input.framer-form-input").forEach(function (i) {
@@ -374,9 +374,9 @@
     function run(key) { runners.forEach(function (r) { r.stop(); }); runners = spec.form.bps.map(function (b) { var r = new Runner(); r.run(b[key], null); return r; }); }
     form.addEventListener("submit", function (e) {
       e.preventDefault(); if (busy || sent) return; busy = true;
-      var cfg = window.TERMTEAM_FORM || {}, data = new FormData(form), url = spec.form.action;
-      if (cfg.endpoint && cfg.accessKey) {
-        url = cfg.endpoint; data.append("access_key", cfg.accessKey);
+      var cfg = window.TERMTEAM_FORM || {}, data = new FormData(form), url = cfg.endpoint;
+      if (cfg.accessKey) {
+        data.append("access_key", cfg.accessKey);
         if (cfg.subject) data.append("subject", cfg.subject);
         if (cfg.fromName) data.append("from_name", cfg.fromName);
         if (data.get("Email")) data.append("replyto", data.get("Email"));

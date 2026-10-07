@@ -104,8 +104,7 @@ const TAG = `<script>(function(){var n=0;document.querySelectorAll("#main *").fo
   // contact form: Framer's submit button states, recorded offline (the request was answered locally)
   if (process.env.FORMDIR && fs.existsSync(`${process.env.FORMDIR}/form-1440.json`)) {
     const { phase } = require("./interact-spec.cjs");
-    const action = /action:`(https:\/\/api\.framer\.com\/forms\/[^`]+)`/.exec(fs.readdirSync(`${CAP}/net`).map((f) => f.endsWith(".json") ? "" : fs.readFileSync(`${CAP}/net/${f}`, "latin1")).find((t) => t.includes("api.framer.com/forms/")) || "");
-    spec.form = { action: action && action[1], bps: [] };
+    spec.form = { bps: [] }; // where it posts lives in assets/js/form-config.js
     for (const [bp, w] of BPS) {
       const f = `${process.env.FORMDIR}/form-${w}.json`; if (!fs.existsSync(f)) continue;
       const d = JSON.parse(fs.readFileSync(f, "utf8"));
