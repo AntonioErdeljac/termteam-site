@@ -370,10 +370,10 @@
         });
       });
     });
-    var busy = false, runners = [];
+    var busy = false, sent = false, runners = [];  // one message per page view: the Success state stays put
     function run(key) { runners.forEach(function (r) { r.stop(); }); runners = spec.form.bps.map(function (b) { var r = new Runner(); r.run(b[key], null); return r; }); }
     form.addEventListener("submit", function (e) {
-      e.preventDefault(); if (busy) return; busy = true;
+      e.preventDefault(); if (busy || sent) return; busy = true;
       var cfg = window.TERMTEAM_FORM || {}, data = new FormData(form), url = spec.form.action;
       if (cfg.endpoint && cfg.accessKey) {
         url = cfg.endpoint; data.append("access_key", cfg.accessKey);
@@ -386,7 +386,7 @@
       afterPaint(function () { run("pending"); });
       fetch(url, { method: "POST", body: data, headers: { accept: "application/json" } })
         .then(function (r) { return r.ok ? r.json().catch(function () { return {}; }).then(function (j) { return j.success !== false; }) : false; }, function () { return false; })
-        .then(function (ok) { busy = false; run(ok ? "success" : "error"); if (!ok) buttons.forEach(function (b) { b.__rehover ? b.__rehover() : (b.__locked = false); }); });
+        .then(function (ok) { busy = false; sent = ok; run(ok ? "success" : "error"); if (!ok) buttons.forEach(function (b) { b.__rehover ? b.__rehover() : (b.__locked = false); }); });
     });
   })();
 
