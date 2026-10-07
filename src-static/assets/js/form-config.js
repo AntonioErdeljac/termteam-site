@@ -5,4 +5,5 @@ window.TERMTEAM_FORM = {
   endpoint: "https://api.web3forms.com/submit",
   accessKey: "",
   subject: "Novi upit s termteam.hr",
+  fromName: "termteam.hr",
 };
