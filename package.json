@@ -1,0 +1,12 @@
+{
+  "name": "termteam-site",
+  "private": true,
+  "devDependencies": {
+    "cf": "^1.0.0-beta.12",
+    "wrangler": "^4.148.0"
+  },
+  "scripts": {
+    "deploy": "cf deploy"
+  },
+  "type": "module"
+}
