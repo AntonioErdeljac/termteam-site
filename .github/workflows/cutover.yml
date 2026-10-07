@@ -1,0 +1,40 @@
+name: Move termteam.hr to Cloudflare (one-off)
+
+# Deletes the records that point termteam.hr and www at Framer, then deploys the Worker with
+# termteam.hr and www.termteam.hr as custom domains. If the deploy fails, the Framer records come back.
+# Mail records (MX, SPF, DKIM, Zoho verification) and portal.termteam.hr are not touched.
+on:
+  workflow_dispatch:
+
+concurrency:
+  group: cloudflare
+  cancel-in-progress: false
+
+jobs:
+  cutover:
+    runs-on: ubuntu-latest
+    env:
+      CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - name: Remove the Framer records
+        run: |
+          npx cf dns records delete 9a2a909646cf30c331e3c601bf68f1ae -z termteam.hr -f
+          npx cf dns records delete d9719d66792587c4ee6481037b18255e -z termteam.hr -f
+          npx cf dns records delete 04a928eed23b9e08e6cb53c4f08117a8 -z termteam.hr -f
+      - name: Deploy with termteam.hr and www.termteam.hr
+        run: npx cf deploy --message "move termteam.hr off Framer"
+      - name: Put the Framer records back
+        if: failure()
+        run: |
+          npx cf dns records create -z termteam.hr --body '{"type":"A","name":"termteam.hr","content":"31.43.160.6","ttl":300,"proxied":false}' || true
+          npx cf dns records create -z termteam.hr --body '{"type":"A","name":"termteam.hr","content":"31.43.161.6","ttl":300,"proxied":false}' || true
+          npx cf dns records create -z termteam.hr --body '{"type":"CNAME","name":"www.termteam.hr","content":"sites.framer.app","ttl":300,"proxied":false}' || true
+      - name: Records now
+        if: always()
+        run: npx cf dns records list -z termteam.hr | grep -E '"(name|type|content|proxied)"'
