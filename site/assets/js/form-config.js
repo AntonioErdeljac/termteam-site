@@ -3,7 +3,7 @@
 // posting to the Framer form it was built from.
 window.TERMTEAM_FORM = {
   endpoint: "https://api.web3forms.com/submit",
-  accessKey: "",
+  accessKey: "fad237e7-6692-4c10-92d1-a1f406780f0b",
   subject: "Novi upit s termteam.hr",
   fromName: "termteam.hr",
 };
